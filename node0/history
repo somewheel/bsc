@@ -1,0 +1,15 @@
+admin.nodeInfo
+admin.peers
+eth.blockNumber
+miner.start()()
+miner.start()
+eth.blockNumber
+miner.start()
+admin.startRPC("127.0.0.1", 8545, "*", "eth,net,web3,admin,personal")
+eth.getBlockByNumber()
+eth.getBlockByNumber(eth.blockNumber)
+admin.startRPC("127.0.0.1", 8545, "*", "eth,net,web3,admin,personal")
+miner.start()
+admin.startRPC("127.0.0.1", 8545, "*", "eth,net,web3,admin,personal")
+admin.nodeInfo
+miner.start()

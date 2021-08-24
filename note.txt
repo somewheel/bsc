@@ -3,8 +3,8 @@
 0x4193803810050169F19f2eb45793399AE443275c
 
 
- ./geth --datadir node0 --port 30000 --nodiscover --unlock '0' --password ./node0/password console --ipcdisable
- ./geth --datadir node1 --port 30001 --nodiscover --unlock '0' --password ./node1/password console --ipcdisable
- ./geth --datadir node2 --port 30002 --nodiscover --unlock '0' --password ./node2/password console --ipcdisable
+ ./geth --datadir node0 --port 30000 --nodiscover --unlock '0' --password ./node0/password --verbosity 5 --mine console --ipcdisable
+ ./geth --datadir node1 --port 30001 --nodiscover --unlock '0' --password ./node1/password --verbosity 5 --mine console --ipcdisable
+ ./geth --datadir node2 --port 30002 --nodiscover --unlock '0' --password ./node2/password --verbosity 5 --mine console --ipcdisable
 
 admin.startRPC("127.0.0.1", 8545, "*", "eth,net,web3,admin,personal")

@@ -1,6 +1,5 @@
-admin.nodeInfo.
 admin.nodeInfo
 miner.start()
 eth.blockNumber
 miner.start()
-admin.nodeInfo
+eth.blockNumber

@@ -443,9 +443,9 @@ func unlockAccounts(ctx *cli.Context, stack *node.Node) {
 	}
 	// If insecure account unlocking is not allowed if node's APIs are exposed to external.
 	// Print warning log to user and skip unlocking.
-	// if !stack.Config().InsecureUnlockAllowed && stack.Config().ExtRPCEnabled() {
-	// 	utils.Fatalf("Account unlock with HTTP access is forbidden!")
-	// }
+	if !stack.Config().InsecureUnlockAllowed && stack.Config().ExtRPCEnabled() {
+		utils.Fatalf("Account unlock with HTTP access is forbidden!")
+	}
 	ks := stack.AccountManager().Backends(keystore.KeyStoreType)[0].(*keystore.KeyStore)
 	passwords := utils.MakePasswordList(ctx)
 	for i, account := range unlocks {

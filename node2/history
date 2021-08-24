@@ -1,13 +1,4 @@
-admin.nodeInfo.
 admin.nodeInfo
 miner.start()
-eth.blockNumber.
 eth.blockNumber
-admin.startRPC("127.0.0.1", 8545, "*", "eth,net,web3,admin,personal")
-miner.start()
-eth.blockNumber
-miner.start()
-eth.blockNumber
-miner.start()
-admin.nodeInfo
 miner.start()

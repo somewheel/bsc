@@ -8,3 +8,50 @@
  ./geth --datadir node2 --port 30002 --nodiscover --unlock '0' --password ./node2/password --verbosity 5 --mine console --ipcdisable
 
 admin.startRPC("127.0.0.1", 8545, "*", "eth,net,web3,admin,personal")
+
+
+{
+            "name": "rpcd",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "cwd":"/Users/long/Documents/GitHub/erigon-bsc/",
+            "program": "/Users/long/Documents/GitHub/erigon-bsc/cmd/rpcdaemon",
+            "args": ["--verbosity","5","--debug","--private.api.addr","localhost:9090","--http.api"
+                ,"eth,erigon,web3,net,debug,trace,txpool,shh"]
+           
+        },
+        {
+            "name": "Launch Package",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "cwd":"/Users/long/Documents/GitHub/erigon-bsc/",
+            "program": "/Users/long/Documents/GitHub/erigon-bsc/cmd/erigon",
+            "args": ["--verbosity","5","--debug","--datadir","./dev","--chain","parlia","--nodiscover"
+            ,"--staticpeers","enode://634f8fb642692950606a2c027261ab39abbe45f8cb91e6a1c39c36ce4c3c71822bf38e9aa91e5d6427c27e51ef5ead69b0d872d3419bf706c704ff311ccbba8d@127.0.0.1:30000?discport=0"]
+       
+        }
+
+
+        {
+            "name": "Launch Package",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "cwd":"/Users/long/Documents/GitHub/bsc",
+            "program": "/Users/long/Documents/GitHub/bsc/cmd/geth",
+            "args": ["--datadir","./node0","--port","30000", "--nodiscover","--unlock","0", "--password", "./node0/password","--verbosity","5","console",
+           "--mine"]
+        //    "--rpc","eth,net,web3,admin,personal",
+        },
+        {
+            "name": "node1",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "cwd":"/Users/long/Documents/GitHub/bsc",
+            "program": "/Users/long/Documents/GitHub/bsc/cmd/geth",
+            "args": ["--datadir","./node1","--port","30001", "--nodiscover","--unlock","0", "--password", "./node1/password","--verbosity","5","console","--syncmode","full" ]
+        //    "--rpc","eth,net,web3,admin,personal",
+        }
